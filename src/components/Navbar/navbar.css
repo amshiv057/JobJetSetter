@@ -1,0 +1,9 @@
+.nav-bar {
+  width: 1120px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: end;
+}

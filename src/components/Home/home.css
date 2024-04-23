@@ -1,0 +1,26 @@
+
+
+.bg-black {
+    background-color: black; 
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel img {
+    width: 200px; 
+    height: 50px;
+    margin-right: 10px;
+}
+
+.carousel img.active {
+    transform: translateX(-100%);
+}
