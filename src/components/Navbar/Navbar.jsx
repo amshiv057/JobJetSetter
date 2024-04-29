@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logo from "../../assets/Images/logo1.png";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -11,6 +11,8 @@ function Navbar() {
 const handleNavigate =()=>{
       navigate("/")
 }
+
+
   return (
     <nav className="nav-bar bg-blue-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +21,7 @@ const handleNavigate =()=>{
             <img className="h-8 w-16" src={logo}  alt="Logo" onClick={handleNavigate} style={{cursor:"pointer"}} />
           </div>
           <div className="hidden md:flex md:items-center md:ml-6">
-            <a href="#" className="text-white px-3 py-2 rounded-md text-sm font-medium">For Recruiters</a>
+            <Link to={"/compLogin"} className="text-white px-3 py-2 rounded-md text-sm font-medium" style={{cursor:"pointer"}}>ForRecruiters</Link>
             <div className="flex-grow"></div>
             <div className="flex items-center">
               <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium">Login</button>
