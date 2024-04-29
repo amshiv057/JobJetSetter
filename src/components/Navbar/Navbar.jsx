@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
 import logo from "../../assets/Images/logo1.png";
-
+import { useNavigate } from 'react-router-dom';
 function Navbar() {
- const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
- const toggleMobileMenu = () => {
+  const navigate = useNavigate();
+  const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
- };
-
- return (
-    <nav className="bg-gray-800">
+  };
+const handleNavigate =()=>{
+      navigate("/")
+}
+  return (
+    <nav className="nav-bar bg-blue-950 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <img className="h-8 w-16" src={logo} alt="Logo" />
+            <img className="h-8 w-16" src={logo}  alt="Logo" onClick={handleNavigate} style={{cursor:"pointer"}} />
           </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <a href="#" className="text-white px-3 py-2 rounded-md text-sm font-medium">For Recruiters</a>
-              <div className="flex-grow"></div> {/* Add this div to stretch the space */}
-              <div className="flex items-center">
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium">Login</button>
-                <button className="ml-2 bg-green-500 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
-              </div>
+          <div className="hidden md:flex md:items-center md:ml-6">
+            <a href="#" className="text-white px-3 py-2 rounded-md text-sm font-medium">For Recruiters</a>
+            <div className="flex-grow"></div>
+            <div className="flex items-center">
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium">Login</button>
+              <button className="ml-2 bg-green-500 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
             </div>
           </div>
           <div className="md:hidden">
@@ -48,7 +49,7 @@ function Navbar() {
         )}
       </div>
     </nav>
- );
+  );
 }
 
 export default Navbar;
